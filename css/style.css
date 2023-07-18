@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --negro: #393939;
+  --blanco: #ececec;
+  --sombra-ppal: #c9c9c9;
+  --sombra-sec: #ffffff;
+  --borde-negro: #00000050;
+  --marcado: rgb(127, 195, 255);
+
+}
+
+/* Las adaptamos al modo oscuro */
+
+body{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #ffffff;
+  vertical-align: baseline;
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.redondo{
+  border-radius: 15px !important;
+}
+
+.navbar-brand img{
+  width: auto;
+  height: 3rem ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link{
+  padding-left: .5rem;
+  color: rgb(146, 146, 146);
+  font-size: 1.25rem;
+  font-weight: 500;
+  
+}
+.navbar-brand .logo_gobierno{
+  margin-left: 2rem;
+}
+
+.navbar-brand .logo_mefcca{
+  margin-right: 5rem;
+}
+/* .margen{
+  margin-left: 10rem;
+
+} */
+.navbar-brand .margen_logo{
+  margin-left: 13rem;
+}
+.bg-dark{
+  height: 3.5rem;
+}
+.img-fluid{
+  max-width: 200%;
+  height: auto;
+}
+/* barra de navegacion gradiente */
+.navbar-toggler {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: .5s ease-in-out;
+  border: 1px solid rgba(255, 0, 0, 0.801);
+  margin-right: 1.3rem;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+
+}
+
+.navbar-toggler span {
+  margin: 0;
+  padding: 0;
+
+}
+
+.toggler-icon {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 1px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.middle-bar {
+  margin-top: 0px;
+}
+
+.navbar-toggler .top-bar {
+  margin-top: 0px;
+  transform: rotate(135deg);
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+  margin-top: 0px;
+  transform: rotate(-135deg);
+
+}
+
+
+.navbar-toggler.collapsed .top-bar {
+  margin-top: -20px;
+  transform: rotate(0deg);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  margin-top: 20px;
+  transform: rotate(0deg);
+}
+
+/*      colores en las 3 lineas       */
+.navbar-toggler.collapsed .toggler-icon {
+  background: linear-gradient(263deg, rgba(217, 0, 98, 0.979)0%, rgba(255, 251, 0, 0.952)100%);
+}
+
+/* IMAGENES DE FLORA Y FAUNA */
+.imgoverlay{
+  box-sizing: border-box;
+}
+.containeroverlay {
+  position: relative;
+  width: 50%;
+  align-items: center !important;
+  padding: 10px;
+  /*max-width: 300px;*/
+}
+.containeroverlay:hover .overlay {
+  opacity: 1;
+}
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 97%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 40px;
+  padding: 20px;
+  text-align: center;
+}
+.div-overlay{
+  width: 100%;
+}
+
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display:flex;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+
+
+/* TRANSICION DE IMAGENES */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.lightbox.activo {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  pointer-events: auto;
+}
+
+.lightbox .cerrar {
+  width: 5.5em;
+  height: 3em;
+  margin-top: 5rem;
+  color: var(--negro);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  box-shadow: 0 0 2em rgba(0, 0, 0,0.6);
+  cursor: pointer;
+}
+
+.lightbox .cerrar:hover {
+  color: white;
+  background: black;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 1rem;
+  box-shadow: 0 0 2em rgba(0, 0, 0,0.6);
+}
+
+.lightbox .grande {
+  width: auto;
+  height: 70vh;
+  background: rgb(86, 196, 233);
+  color: rgb(0, 0, 0);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: white;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 1);
+}
+
+.caption-container {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  /*padding: 1px 1px;*/
+  color: rgb(8, 8, 8);
+}
+
+.ul {
+  width: 100%;
+  background: lightgrey;
+  padding: 1em;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  gap: 1em;
+  color: var(--negro);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  -webkit-box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+          box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+
+.ul .li {
+  background: orange;
+  overflow: hidden;
+  color: var(--negro);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  -webkit-box-shadow: 0.8em 0.8em 1.6em var(--sombra-ppal), -0.8em -0.8em 1.6em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+          box-shadow: 0.8em 0.8em 1.6em var(--sombra-ppal), -0.8em -0.8em 1.6em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+
+.ul .img {
+  min-height: 25vh;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.ul .li:hover .img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/*/ Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) {
+  .navbar-brand .margen_logo{
+    display: none;
+  }
+  .lightbox .grande{
+    width: 95%;
+
+  }
+  .lightbox .cerrar{
+    width: 5.5rem;
+    height: 3rem;
+  }
+  .row img{
+    width: 100%;
+  }
+}
+
+/*/ Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .navbar-brand .margen_logo{
+    display: none;
+  }
+}
+
+/*/ Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .navbar-brand .margen_logo{
+    display: none;
+  }
+
+
+}
+
+/*/ X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+
+  /* .container-fluid .navbar-brand .margen_logo{
+    margin-left: 18rem;
+  } */
+  /* .navbar-brand .logo_mefcca{
+    margin-left: 2rem;
+  } */
+}
+
+@media (min-width: 1400px) {
+  .navbar-brand .logo_mefcca{
+    margin-left: -5rem;
+  }
+}
