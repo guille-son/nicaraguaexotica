@@ -330,24 +330,16 @@ svg {
     width: 5.5rem;
     height: 3rem;
   }
-  .row img{
-    width: 100%;
-  }
+ 
 }
 
 /*/ Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-  .navbar-brand .margen_logo{
-    display: none;
-  }
+
 }
 
 /*/ Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .navbar-brand .margen_logo{
-    display: none;
-  }
-
 
 }
 
@@ -364,7 +356,5 @@ svg {
 }
 
 @media (min-width: 1400px) {
-  .navbar-brand .logo_mefcca{
-    margin-left: -5rem;
-  }
+
 }
