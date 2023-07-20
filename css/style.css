@@ -25,7 +25,7 @@ body{
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.redondo{
+.redondo img{
   border-radius: 15px !important;
 }
 
@@ -36,7 +36,10 @@ body{
   justify-content: space-between;
   align-items: center;
 }
-
+.contenedor{
+  display: flex;
+  margin-right: 2rem;
+}
 .nav-link{
   padding-left: .5rem;
   color: rgb(146, 146, 146);
@@ -51,13 +54,14 @@ body{
 .navbar-brand .logo_mefcca{
   margin-right: 5rem;
 }
+
 /* .margen{
   margin-left: 10rem;
 
 } */
-.navbar-brand .margen_logo{
+/* .navbar-brand .margen_logo{
   margin-left: 13rem;
-}
+} */
 .bg-dark{
   height: 3.5rem;
 }
@@ -177,7 +181,7 @@ body{
   width: 100%;
 }
 
-img, picture, video, iframe, figure {
+ img,picture, video, iframe, figure {
   max-width: 100%;
   width: 100%;
   display:flex;
@@ -330,23 +334,75 @@ svg {
     width: 5.5rem;
     height: 3rem;
   }
+  .logo_gobierno{
+    display: none !important;
+  }
+
+  .containeroverlay img{
+    width: 100%;
+
+  }
+  .containeroverlay {
+    width: 90%;
+    margin-left: 1.4rem;
+    padding-top: 5px;
+
+  }
+  .redondo img{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .overlay {
+    position: absolute; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1; 
+    width: 90%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 2rem;
+    padding: 20px;
+    text-align: center;
+  }
+  .div-overlay{
+    width: 90%;
+  }
+.navbar-brand img{
+    width: auto;
+    height: 50px;
+  }
  
 }
 
 /*/ Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-
+  .margen_logo{
+    display: none;
+  }
 }
 
 /*/ Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (max-width: 992px) {
+  .margen_logo{
+    display: none;
+  }
+  .contenedor{
+    display: block;
+    margin-left: 1rem;
+  }
 
 }
 
 /*/ X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  
-
+  .contenedor{
+    display: flex;
+    margin-right: 5rem;
+  }
+  /* .margen_logo img{
+    margin-right: -4rem;
+  } */
   /* .container-fluid .navbar-brand .margen_logo{
     margin-left: 18rem;
   } */
